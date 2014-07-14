@@ -1,5 +1,6 @@
 var Post = Backbone.Model.extend({
 	defaults: {
+		title: '',
 		status: 'published',
 		author: 'Greeley',
 		date: 'insert date here'
@@ -9,13 +10,7 @@ var Post = Backbone.Model.extend({
 	}
 });
 
-var post = new Post({
-	title: 'hi'
-  });
-
-Blog = Backbone.Collection.extend ({
+var Blog = Backbone.Collection.extend ({
 	model: Post,
 	url: 'http://tiy-atl-fe-server.herokuapp.com/collections/greeley'
 });
-
-var posts = new Blog();
