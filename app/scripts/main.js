@@ -17,5 +17,5 @@ $('#post-btn').click(function(event){
 		title: $('#title').val(),
   });
   posts.add(post).save();
-  $('titleTemplate').append(post.escape(post.title.fetch()));
+  $('body').append(post.escape('title'));
 });
