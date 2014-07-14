@@ -1,16 +1,13 @@
 var data = {
   titles: [
     {
-      name: 'Sam',
-      location: 'Georgia'
+      title: 'The dangers of foosball',
     },
     {
-      name: 'Bob',
-      location: 'Florida'
+      title: 'How to save money on your lizard insurance',
     },
     {
-      name: 'Greg',
-      location: 'Kansas'
+      title: 'In defense of cheesy poofs',
     }
   ]
 };

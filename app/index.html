@@ -22,13 +22,16 @@
     <!-- endbuild -->
   </head>
   <body>
-
+    <form id='post'>
+        <input type='text' name='title'></input>
+        <input type='button' onclick='submit()' value='Post'>
+    </form>
     <div class='titleList'></div>
  
 <!-- My Handlebars Template -->
 <script type="text/x-handlebars-template" class='titleTemplate'>
     {{#each titles}}
-        <li>Hi, my name is {{ name }} and I am from {{ location }}</li>
+        <li>My post titles are '{{ title }}'</li>
     {{/each}}
 </script>
 
@@ -42,6 +45,7 @@
     <!-- endbuild -->
 
     <script src='scripts/data.js'></script>
+    <script src='scripts/model.js'></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
