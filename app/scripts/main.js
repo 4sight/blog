@@ -10,12 +10,12 @@ $('.titleList').html(rendered);
 var posts = new Blog();
 
 // Function to execute when user clicks the 'Submit' button
-$('#post-btn').click(function(event){
+$('#postButton').click(function(event){
 	event.preventDefault();
 	console.log($('#title').val());
 	var post = new Post({
 		title: $('#title').val(),
   });
   posts.add(post).save();
-  $('body').append(post.escape('title'));
+  $('.titleList').append(post.escape('title'));
 });
