@@ -18,4 +18,7 @@ $('#postButton').click(function(event){
   });
   posts.add(post).save();
   $('.titleList').append(post.escape('title'));
+  $('.contentList').append(post.escape('tile'));
+  var data = {title: post.title}
+	var html = template(data);
 });

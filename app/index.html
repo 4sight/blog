@@ -28,12 +28,9 @@
         <input type='button' id='postButton' value='Post'>
         </input>
     </form>
-    <div class='titleList'></div>
-    
- 
 <!-- My Handlebars Template -->
 <script type="text/x-handlebars-template" class='titleTemplate'>
-    {{#each titles}}
+    {{#each posts}}
         <li>My post titles are '{{ title }}'</li>
     {{/each}}
 </script>
@@ -49,6 +46,7 @@
 
     <script src='scripts/data.js'></script>
     <script src='scripts/model.js'></script>
+    <script src='scripts/view.js'></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
