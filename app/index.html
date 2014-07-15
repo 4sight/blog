@@ -29,9 +29,11 @@
         </input>
     </form>
 <!-- My Handlebars Template -->
-<script type="text/x-handlebars-template" class='titleTemplate'>
+<script type="text/x-handlebars-template" class='postTemplate'>
     {{#each posts}}
-        <li>My post titles are '{{ title }}'</li>
+    <artcile class='single-entry group'>
+    <h1 class='title'>{{title}}</h1>
+    <p class='date'><time>{{date}}</time></p>
     {{/each}}
 </script>
 
