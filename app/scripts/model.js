@@ -1,16 +1,20 @@
 var Post = Backbone.Model.extend({
 	defaults: {
-		status: 'published',
-		author: 'Greeley',
+		title: '',
+		content: '',
+		date: '',
+		status: '',
+		author: '',
+		tags: [],
 	},
-	id: '_id',
+	idAttribute: '_id',
 
 	initialize: function(){
 		console.log('New post created');
 	}
 });
 
-var Blog = Backbone.Collection.extend ({
+var Blog = Backbone.Collection.extend({
 	model: Post,
 	url: 'http://tiy-atl-fe-server.herokuapp.com/collections/greeley'
 });

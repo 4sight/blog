@@ -1,5 +1,5 @@
 allPosts.fetch().done(function(){
-  new Post({collection: allPosts});
+  new PostView({collection: allPosts});
 });
 
 $('header a').on('click', function (e) {

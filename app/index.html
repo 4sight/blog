@@ -22,20 +22,22 @@
     <!-- endbuild -->
   </head>
   <body>
+  <div id='blog'>
     <form id='data'>
-        <input type='text' id='title'>
+        <input type='text' class='postTitle'>
         </input>
-        <input type='button' id='postButton' value='Post'>
+        <button class='button'>Post</button>
         </input>
     </form>
 <!-- My Handlebars Template -->
-<script type="text/x-handlebars-template" class='postTemplate'>
+<script type="text/x-handlebars-template" id='postTemplate'>
     {{#each posts}}
-    <artcile class='single-entry group'>
-    <h1 class='title'>{{title}}</h1>
+    <article class='single-entry group'>
+    <h1 class='postTitle'>{{title}}</h1>
     <p class='date'><time>{{date}}</time></p>
     {{/each}}
 </script>
+</div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -46,7 +48,6 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script src='scripts/data.js'></script>
     <script src='scripts/model.js'></script>
     <script src='scripts/view.js'></script>
     <script src="scripts/main.js"></script>
