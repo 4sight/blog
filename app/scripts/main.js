@@ -3,6 +3,6 @@ allPosts.fetch().done(function(){
 });
 
 $('header a').on('click', function (e) {
- e.preventDefault();
- window.appr.navigate("", {trigger: true});
+	e.preventDefault();
+	window.appr.navigate("", {trigger: true});
 });

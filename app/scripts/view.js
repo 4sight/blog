@@ -15,9 +15,9 @@ var PostView = Backbone.View.extend({
 	render: function(){
 		// Get and compile my template
 		var template = Handlebars.compile($('#postTemplate').html());
-		var rendered = template({post: this.collection.toJSON()});
+		var rendered = template({allPosts: this.collection.toJSON()});
 		// Choose a spot on my page and dump my rendered template HTML into it.
-		this.$el.find('#postTemplate').html(rendered);
+		this.$el.find('#posts').html(rendered);
 		// this.$el.find('.postEntryForm').show();
 		return this;
 	},
