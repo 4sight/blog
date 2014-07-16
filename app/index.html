@@ -22,24 +22,27 @@
     <!-- endbuild -->
   </head>
   <body>
-  <div id='blog'>
-    <form id='data'>
-        <input type='text' class='postTitle'>
-        </input>
-        <button class='button'>Post</button>
-        </input>
-    </form>
+    <div id='wrapper'>
+      <div id='blog'>
+        <form id='data'>
+            <input type='text' placeholder='Title' class='postTitle'></input>
+            <input type='text' placeholder='Author' class='postAuthor'></input>
+            <input type='text' placeholders='Enter your post here' class='postContent'></input>
+            <button class='button'>Post</button>
+        </form>
 
-<div id='posts'></div>
-<!-- My Handlebars Template -->
-<script type='text/x-handlebars-template' id='postTemplate'>
-    {{#each allPosts}}
-    <article class='single-entry group'>
-    <h1 class='postTitle'>'{{title}}'</h1>
-    <p class='date'><time>{{date}}</time></p>
-    {{/each}}
-</script>
-</div>
+        <div id='posts'></div>
+        <!-- My Handlebars Template -->
+        <script type='text/x-handlebars-template' id='postTemplate'>
+            {{#each allPosts}}
+                <article class='single-entry group'>
+                <h2 class='postTitle'>{{title}}</h2>
+                <p class='content'>{{content}}</p>
+                <p class='date'><time>{{date}}</time></p>
+            {{/each}}
+        </script>
+        </div>
+    </div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

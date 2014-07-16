@@ -9,9 +9,13 @@ body {
   color: #333;
 }
 
-.hero-unit {
+#wrapper {
+  @include outer-container;
+}
+
+#blog {
   margin: 50px auto 0 auto;
-  width: 600px;
+  @include span-columns(12);
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
@@ -23,4 +27,22 @@ body {
     line-height: 1;
     letter-spacing: -1px;
   }
+}
+
+.button {
+  display: inline-block;
+  float: left;
+}
+
+.postContent {
+  margin: 50px auto 0 auto;
+  @include span-columns(11);
+  float: left;
+  height: 300px;
+  display: inline-block;
+  clear: right;
+}
+
+#posts {
+  @include span-columns(11);
 }
