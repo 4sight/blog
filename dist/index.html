@@ -14,31 +14,47 @@
     <script src="scripts/vendor/modernizr.js"></script>
   </head>
   <body>
+    <div id='blog'>
+        <form id='data'>
+            <input type='text' placeholder='Title' class='postTitle'></input>
+            <input type='text' placeholder='Author' class='postAuthor'></input>
+            <textarea class='postContent' name='content' placeholder='Enter your post here' cols='30' rows='10'></textarea>
+            <input type='text' placeholder='Tags (separate with commas)' class='postTags'></input>
+            <button class='button'>Post</button>
+        </form>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-
-        <li>Sass</li>
-
-
-        <li>Modernizr</li>
-
-
-        <li>Bourbon & Neat</li>
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+        <div id='posts'></div>
+        <!-- My Handlebars Template -->
+        <script type='text/x-handlebars-template' id='postTemplate'>
+            {{#each allPosts}}
+                <article class='single-entry group'>
+                <p class='date'><time>{{date}}</time></p>
+                {{#if tags}}
+                    <p class='tags'>Tags: {{tags}}</p>
+                {{/if}}
+                <h2 class='postTitle'><a id="{{ _id }}" href="">{{title}}</a></h2>
+                <p class='content'>{{content}}</p>
+            {{/each}}
+        </script>
+        <script type='text/x-handlebars-template' id='singlePostTemplate'>
+            {{allPosts}}
+                <article class='single-entry group'>
+                <p class='date'><time>{{date}}</time></p>
+                {{#if tags}}
+                    <p class='tags'>Tags: {{tags}}</p>
+                {{/if}}
+                <h2 class='postTitle'><a id="{{ _id }}" href="">{{title}}</a></h2>
+                <p class='content'>{{content}}</p>
+            {{/each}}
+        </script>
     </div>
 
     <script src="scripts/vendor.js"></script>
 
-        <script src="scripts/main.js"></script>
+    <script src='scripts/model.js'></script>
+    <script src='scripts/router.js'></script>
+    <script src='scripts/view.js'></script>
+    <script src='scripts/postView.js'></script>
+    <script src='scripts/main.js'></script>
 </body>
 </html>

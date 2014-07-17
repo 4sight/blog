@@ -17,7 +17,6 @@ var Post = Backbone.Model.extend({
 var Blog = Backbone.Collection.extend({
 	model: Post,
 	url: 'http://tiy-atl-fe-server.herokuapp.com/collections/greeley',
-	comparator: 'date'
 });
 
 var allPosts = new Blog();

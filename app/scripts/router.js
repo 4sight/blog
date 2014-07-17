@@ -3,11 +3,7 @@ var PostRouter = Backbone.Router.extend({
     'post/:id' : 'onePost'
   },
 
-  onePost: function (id) {
-    new PostSingle({ postid: id });
+  onePost: function (id){
+    new PostSingle({ postid: id, collection: allPosts });
   }
 });
-
-new PostRouter();
-
-Backbone.history.start();

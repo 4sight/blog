@@ -1,19 +1,20 @@
 var PostSingle = Backbone.View.extend ({
 	el: '#blog',
 
-  initialize: function(){
-	this.render();
-	this.collection.id;
-	window.appr.navigate('', {trigger: true}),
- 
 	events: {
 		'click h2 a': 'viewPost'
 	},
 
-  render: function (options) {
+  initialize: function(attributes){
+	this.options = attributes;
+	this.render();
+	},
+
+  render: function (options){
+  	var single = this.collection.get(this.options.postid);
   	var template = Handlebars.compile($('#singlePostTemplate').html());
-		var rendered = template();
-    this.$el.find('#posts').html(rendered);
+		var rendered = template(single.toJSON());
+    this.$el.html(rendered);
   },
 
   viewPost: function (event){

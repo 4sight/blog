@@ -40,20 +40,17 @@
                 {{#if tags}}
                     <p class='tags'>Tags: {{tags}}</p>
                 {{/if}}
-                <h2 class='postTitle'><a id="{{ _id }}" href="">{{title}}</a></h2>
+                <h2 class='postTitle'><a id="{{ _id }}" href="/#post/{{ _id }}">{{title}}</a></h2>
                 <p class='content'>{{content}}</p>
             {{/each}}
         </script>
         <script type='text/x-handlebars-template' id='singlePostTemplate'>
-            {{allPosts}}
-                <article class='single-entry group'>
-                <p class='date'><time>{{date}}</time></p>
-                {{#if tags}}
-                    <p class='tags'>Tags: {{tags}}</p>
-                {{/if}}
-                <h2 class='postTitle'><a id="{{ _id }}" href="">{{title}}</a></h2>
-                <p class='content'>{{content}}</p>
-            {{/each}}
+            <p class='date'><time>{{date}}</time></p>
+            {{#if tags}}
+                <p class='tags'>Tags: {{tags}}</p>
+            {{/if}}
+            <h2 class='postTitle'>{{title}}</h2>
+            <p class='content'>{{content}}</p>
         </script>
     </div>
 
