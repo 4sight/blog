@@ -26,7 +26,8 @@
         <form id='data'>
             <input type='text' placeholder='Title' class='postTitle'></input>
             <input type='text' placeholder='Author' class='postAuthor'></input>
-            <input type='text' placeholder='Enter your post here' class='postContent'></input>
+            <textarea class='postContent' name='content' placeholder='Enter your post here' cols='30' rows='10'></textarea>
+            <input type='text' placeholder='Tags (separate with commas)' class='postTags'></input>
             <button class='button'>Post</button>
         </form>
 
@@ -35,9 +36,23 @@
         <script type='text/x-handlebars-template' id='postTemplate'>
             {{#each allPosts}}
                 <article class='single-entry group'>
-                <h2 class='postTitle'>{{title}}</h2>
-                <p class='content'>{{content}}</p>
                 <p class='date'><time>{{date}}</time></p>
+                {{#if tags}}
+                    <p class='tags'>Tags: {{tags}}</p>
+                {{/if}}
+                <h2 class='postTitle'><a id="{{ _id }}" href="">{{title}}</a></h2>
+                <p class='content'>{{content}}</p>
+            {{/each}}
+        </script>
+        <script type='text/x-handlebars-template' id='singlePostTemplate'>
+            {{allPosts}}
+                <article class='single-entry group'>
+                <p class='date'><time>{{date}}</time></p>
+                {{#if tags}}
+                    <p class='tags'>Tags: {{tags}}</p>
+                {{/if}}
+                <h2 class='postTitle'><a id="{{ _id }}" href="">{{title}}</a></h2>
+                <p class='content'>{{content}}</p>
             {{/each}}
         </script>
     </div>
@@ -52,7 +67,9 @@
     <!-- endbuild -->
 
     <script src='scripts/model.js'></script>
+    <script src='scripts/router.js'></script>
     <script src='scripts/view.js'></script>
-    <script src="scripts/main.js"></script>
+    <script src='scripts/postView.js'></script>
+    <script src='scripts/main.js'></script>
 </body>
 </html>

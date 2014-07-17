@@ -27,7 +27,7 @@ body {
 
 .button {
   display: inline-block;
-  float: left;
+  float: right;
   margin-top: 10px;
 }
 
@@ -43,6 +43,7 @@ body {
   position: relative;
   top: 50px;
   left: -50px;
+  margin-left: 50px;
 }
 
 .postTitle {
@@ -51,4 +52,17 @@ body {
 
 .postAuthor {
   float: right;
+}
+
+.postTags {
+  width: 300px;
+  position: relative;
+  top: 12px;
+}
+
+.tags {
+  float: right;
+  display: inline;
+  position: relative;
+  top: -68px;
 }

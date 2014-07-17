@@ -9,7 +9,6 @@ var PostView = Backbone.View.extend({
 
 	events: {
 		'submit #data': 'createPost'
-		// 'click h1.title a': 'single_view'
 	},
 
 	render: function(){
@@ -25,7 +24,6 @@ var PostView = Backbone.View.extend({
 	// Function to execute when user clicks the 'Submit' button
 	createPost: function(event){
 		event.preventDefault();
-		console.log('I got clicked');
 		var tempPost,
 		title = $('.postTitle').val(),
 		content = $('.postContent').val(),
