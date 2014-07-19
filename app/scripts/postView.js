@@ -7,14 +7,13 @@ var PostSingle = Backbone.View.extend ({
 	},
 
   initialize: function(attributes){
-  	this.options = attributes;
+  	this.single = this.collection.get(attributes.postid);
   	this.render();
 	},
 
   render: function (options){
-  	var single = this.collection.get(this.options.postid);
   	var template = Handlebars.compile($('#singlePostTemplate').html());
-		var rendered = template(single.toJSON());
+		var rendered = template(this.single.toJSON());
     this.$el.html(rendered);
   },
 
@@ -30,8 +29,8 @@ var PostSingle = Backbone.View.extend ({
     event.stopPropagation();
     // Confirmation dialogue
     if (window.confirm("Are you sure you want to delete this post?")) {
-      this.options.destroy({success: function () {
-        window.PostRouter.navigate('', { trigger: true }); // Route home
+      this.single.destroy({success: function () {
+        window.router.navigate('', { trigger: true }); // Route home
       }});
     }
   }

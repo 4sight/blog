@@ -35,8 +35,8 @@
         <!-- My Handlebars Template -->
         <script type='text/x-handlebars-template' id='postTemplate'>
             {{#each allPosts}}
-                <article class='single-entry group'>
-                <p class='date'><time>{{date}}</time></p>
+                <article class='list'>
+                {{date}}
                 {{#if tags}}
                     <p class='tags'>Tags: {{tags}}</p>
                 {{/if}}
