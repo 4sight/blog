@@ -30,20 +30,25 @@
             <input type='text' placeholder='Tags (separate with commas)' class='postTags'></input>
             <button class='button'>Post</button>
         </form>
-
         <div id='posts'></div>
-        <!-- My Handlebars Template -->
+    </div>
+
+    <!-- My Handlebars Template -->
+    <div id='postsDiv'>
         <script type='text/x-handlebars-template' id='postTemplate'>
             {{#each allPosts}}
                 <article class='list'>
-                {{date}}
-                {{#if tags}}
-                    <p class='tags'>Tags: {{tags}}</p>
-                {{/if}}
-                <h2 class='postTitle'><a id="{{ _id }}" href="/#post/{{ _id }}">{{title}}</a></h2>
-                <p class='content'>{{content}}</p>
+                    {{date}}
+                    {{#if tags}}
+                        <p class='tags'>Tags: {{tags}}</p>
+                    {{/if}}
+                    <h2 class='postTitle'><a id="{{ _id }}" href="/#post/{{ _id }}">{{title}}</a></h2>
+                    <p class='content'>{{content}}</p>
+                </article>
             {{/each}}
         </script>
+    </div>
+    <div id='onePostDiv'>
         <script type='text/x-handlebars-template' id='singlePostTemplate'>
             <p class='date'><time>{{date}}</time></p>
             {{#if tags}}

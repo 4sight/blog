@@ -16,7 +16,9 @@ var PostView = Backbone.View.extend({
 		var template = Handlebars.compile($('#postTemplate').html());
 		var rendered = template({allPosts: this.collection.toJSON()});
 		// Choose a spot on my page and dump my rendered template HTML into it.
+		// Maybe hide the single post element
 		this.$el.find('#posts').html(rendered);
+		this.$el.find('#onePostDiv').hide;
 		// this.$el.find('.postEntryForm').show();
 		return this;
 	},
