@@ -16,21 +16,14 @@ var PostSingle = Backbone.View.extend ({
     // 5. returns `this.single` = our specific model from our URL
 
   	this.render();
-    this.$el.find('#postsDiv').hide;
 	},
 
   render: function (options){
   	var template = Handlebars.compile($('#singlePostTemplate').html());
 		var rendered = template(this.single.toJSON());
-    this.$el.append(rendered);
+    this.$el.find('#posts').html(rendered);
+    $('#data').hide();
   },
-
-  // viewPost: function (event){
-  // 	event.preventDefault();
-  // 	event.stopPropagation();
-  // 	var postID = $(event.target).attr('id');
-  // 	window.router.navigate('#post/'+id, {trigger:true});
-  // },
 
   deletePost: function (event) {
     event.preventDefault();
