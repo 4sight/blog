@@ -34,12 +34,12 @@ var PostView = Backbone.View.extend({
 		tags = $('.postTags').val(),
 
 		tempPost = new Post({
-		title: title,
-		content: content,
-		author: author,
-		tags: tags, // .replace(/\s+/g, '').split(','),
-		status: 'Published',
-		date: new Date().toJSON().slice(0,10)
+			title: title,
+			content: content,
+			author: author,
+			tags: tags, // .replace(/\s+/g, '').split(','),
+			status: 'Published',
+			date: new Date().toJSON().slice(0,10)
 		});
 
 	allPosts.add(tempPost).save();
