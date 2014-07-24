@@ -20,7 +20,7 @@ var PostView = Backbone.View.extend({
 		// Maybe hide the single post element
 		this.$el.find('#posts').html(rendered);
 		$('#data').show();
-		//this.$el.find('#onePostDiv').hide;
+		// this.$el.find('#onePostDiv').hide;
 		// this.$el.find('.postEntryForm').show();
 		return this;
 	},

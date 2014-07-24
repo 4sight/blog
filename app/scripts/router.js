@@ -4,11 +4,15 @@ var PostRouter = Backbone.Router.extend({
     'post/:id' : 'onePost'
   },
 
-	home: function () {
+  // initialize: function(){
+  //   this.
+  // }
+
+	home: function(){
     new PostView({ collection: allPosts });
   },
 
-  onePost: function (id){
+  onePost: function(id){
     new PostSingle({ postid: id, collection: allPosts });
   }
 });
