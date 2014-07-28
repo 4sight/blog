@@ -1,10 +1,14 @@
 var PostRouter = Backbone.Router.extend({
   routes: {
-  	'' : 'home',
+  	'' : 'login',
     'post/:id' : 'onePost'
   },
 
-	home: function () {
+  login: function(){
+    new Login({});
+  },
+
+	home: function(){
     new PostView({ collection: allPosts });
   },
 

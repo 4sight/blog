@@ -25,7 +25,24 @@
   </head>
   <body>
     <div id='blog'>
+        <div id='userAccess'>
+            <form id='loginForm'>
+                <div class="error" style="display:none"></div>
+                <input type='text' placeholder='Email' class='loginEmail'></input>
+                <input type='text' placeholder='Password' class='loginPassword'></input>
+                <button class='login'>Log In</button>
+            </form>
+            <form id='signUpForm'>
+                <div class="error" style="display:none"></div>
+                <input type='text' placeholder='Email' class='newEmail'></input>
+                <input type='text' placeholder='Choose your password' class='newPassword'></input>
+                <button class='createAccount'>Create Account</button>
+            </form>
+        </div>
         <form id='data'>
+            <div id='userInfo'>
+                You are signed in as <%= Parse.User.current().escape("username") %> (<a href="#" class="logout">Logout</a>)
+            </div>
             <input type='text' placeholder='Title' class='postTitle'></input>
             <input type='text' placeholder='Author' class='postAuthor'></input>
             <textarea class='postContent' name='content' placeholder='Enter your post here' cols='30' rows='10'></textarea>
@@ -74,6 +91,7 @@
 
     <script src='scripts/model.js'></script>
     <script src='scripts/router.js'></script>
+    <script src='scripts/loginView.js'></script>
     <script src='scripts/view.js'></script>
     <script src='scripts/postView.js'></script>
     <script src='scripts/main.js'></script>

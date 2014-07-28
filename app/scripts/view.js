@@ -9,7 +9,8 @@ var PostView = Backbone.View.extend({
 	},
 
 	events: {
-		'submit #data': 'createPost'
+		'submit #data': 'createPost',
+		'click .logout': 'logout'
 	},
 
 	render: function(){
@@ -20,6 +21,7 @@ var PostView = Backbone.View.extend({
 		// Maybe hide the single post element
 		this.$el.find('#posts').html(rendered);
 		$('#data').show();
+		$('#userAccess').hide();
 		// this.$el.find('#onePostDiv').hide;
 		// this.$el.find('.postEntryForm').show();
 		return this;

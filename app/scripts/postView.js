@@ -2,7 +2,6 @@ var PostSingle = Backbone.View.extend ({
 	el: '#blog',
 
 	events: {
-		// 'click h2 a': 'viewPost',
     'click .delete' : 'deletePost'
 	},
 
@@ -23,6 +22,7 @@ var PostSingle = Backbone.View.extend ({
 		var rendered = template(this.single.toJSON());
     this.$el.find('#posts').html(rendered);
     $('#data').hide();
+    $('#userAccess').hide();
   },
 
   deletePost: function (event) {
